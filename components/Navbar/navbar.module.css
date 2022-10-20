@@ -1,0 +1,18 @@
+.header {
+	heigh: 70px;
+	z-index: 999;
+	position: sticky;
+	top: 0;
+}
+
+.left {
+	flex: auto;
+}
+
+.cart {
+	flex: auto;
+}
+
+@media only screen and (max-width: 600px) {
+
+}

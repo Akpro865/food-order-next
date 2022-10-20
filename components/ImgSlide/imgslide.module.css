@@ -1,0 +1,20 @@
+.gallery {
+	width: 90vw;
+	height: 55vmin;
+	column-gap: 5;
+}
+
+.galleryImg {
+	height: 100%;
+	flex: 1;
+	object-fit: cover;
+	overflow: hidden;
+	cursor: pointer;
+	border-radius: 10px;
+	transition: 700ms ease-in-out;
+	margin: 2px;
+}
+
+.galleryImg:hover {
+	flex: 3;
+}
