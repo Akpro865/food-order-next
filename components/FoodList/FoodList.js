@@ -10,9 +10,9 @@ function FoodList({items}) {
        And if you fall in love, well, then everything is easy.</p>
       </div>
       <div className='p-2 flex flex-wrap justify-evenly'>
-       { items.map(item => (
+       { items ? items.map(item => (
           <FoodCard key={item._id} item={item} />
-       ))       
+       )) : null     
        }
       </div>
     </div>

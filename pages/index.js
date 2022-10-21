@@ -15,7 +15,7 @@ function Home() {
 			console.log(res.data)
 		}
 		getItems()
-	},[])
+	},[items])
 	console.log(items)
   return (
   	<>
@@ -27,4 +27,3 @@ function Home() {
 }
 
 export default Home
-

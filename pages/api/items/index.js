@@ -4,14 +4,15 @@ import Items from '../../../models/Items'
 export default async function handler(req, res) {
     const { method } = req;
 
-    dbConnect()
+    await dbConnect()
 
     if (method === 'GET') {
         try {
+             dbConnect()
             const items = await Items.find()
             res.status(200).json(items)
         } catch(err) {
-            res.status(500).json(err)
+            res.status(500).json(err.message)
         }
     	
     }
