@@ -1,7 +1,5 @@
 import axios from 'axios'
 
 export const url = axios.create({
-	baseURL : "http://localhost:3000"
+	baseURL : "https://food-order-next.vercel.app/"
 })
-
-// https://food-order-ashen.vercel.app
