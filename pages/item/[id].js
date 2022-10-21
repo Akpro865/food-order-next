@@ -88,7 +88,7 @@ function ItemDetail({item}) {
 export default ItemDetail
 
 export const getServerSideProps = async ({params}) => {
-  const res = await url.get(`/api/items/${params.id}`)
+  const res = await axios.get(`/api/items/${params.id}`)
   const item = res.data
   return {
     props: {

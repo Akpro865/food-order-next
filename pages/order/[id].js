@@ -110,7 +110,7 @@ function Order({order}) {
 export default Order
 
 export const getServerSideProps = async ({params}) => {
-  const res = await url.get(`/api/orders/${params.id}`)
+  const res = await axios.get(`/api/orders/${params.id}`)
   const order = res.data
   return {
     props: {

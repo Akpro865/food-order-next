@@ -41,7 +41,7 @@ function Create() {
               img: config.url,
             }
             console.log(newItem)
-            await url.post("/api/items", newItem);
+            await axios.post("/api/items", newItem);
             router.push("/admin")
 		}catch(err){
 			console.log(err)

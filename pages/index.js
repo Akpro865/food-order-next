@@ -10,7 +10,7 @@ function Home() {
 	const [items, setItems] = useState([])
 	useEffect(()=>{
 		const getItems = async ()=>{
-			const res = await url.get('/api/items')
+			const res = await axios.get('/api/items')
 			setItems(res.data)
 			console.log(res.data)
 		}

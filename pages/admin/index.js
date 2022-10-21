@@ -9,7 +9,7 @@ function Admin({items, orders}) {
 	const status = ['preparing', 'picking up', 'delivered']
 	const handleDelete = async (id) => {
 		try {
-			const res = await url.delete(`/api/items/${id}`)
+			const res = await axios.delete(`/api/items/${id}`)
 			setItemsList(items.filter((item) => item._id !== id))
 		} catch (err) {
 			console.log(err)
@@ -19,7 +19,7 @@ function Admin({items, orders}) {
 		const oneOrder = OrdersList.filter((order) => order._id === id)[0];
 		const currentStat = oneOrder.status
 		try{
-			const res = await url.put(`/api/orders/${id}`, {status: currentStat + 1})
+			const res = await axios.put(`/api/orders/${id}`, {status: currentStat + 1})
 			setOrdersList([
 				res.data,
 				...OrdersList.filter((order) =>order._id !== id)
@@ -118,8 +118,8 @@ export const getServerSideProps = async (ctx) => {
       },
     };
   }
-  const itemsRes = await url.get("/api/items/")
-  const ordersRes = await url.get("/api/orders/")
+  const itemsRes = await axios.get("/api/items/")
+  const ordersRes = await axios.get("/api/orders/")
   return {
     props: {
       items: itemsRes.data,
